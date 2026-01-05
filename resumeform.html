@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Application Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 220px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>General Application Form</h2>
+
+        <form id="generalForm">
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required />
+                </div>
+                <div class="form-group">
+                    <label>Mother Name</label>
+                    <input type="text" name="mother_name" required />
+                </div>
+                <div class="form-group">
+                    <label>Father Name</label>
+                    <input type="text" name="father_name" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea name="address" rows="3" required></textarea>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Phone No</label>
+                    <input type="tel" name="phone" required />
+                </div>
+                <div class="form-group">
+                    <label>District</label>
+                    <input type="text" name="district" required />
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="city" required />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>State</label>
+                    <input type="text" name="state" required />
+                </div>
+                <div class="form-group">
+                    <label>Pin Code</label>
+                    <input type="number" name="pincode" required />
+                </div>
+            </div>
+
+            <h3>Education Details</h3>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>10th Class %</label>
+                    <input type="number" step="0.01" name="class10" />
+                </div>
+                <div class="form-group">
+                    <label>12th Class %</label>
+                    <input type="number" step="0.01" name="class12" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Higher Education Details</label>
+                <textarea name="education_details" rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Job Required In Which Department</label>
+                <select name="job_department" required>
+                    <option value="">-- Select Option --</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Accounts">Accounts</option>
+                    <option value="IT">IT</option>
+                    <option value="HR">HR</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('generalForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Form submitted successfully!');
+            // Yahan aap Google Sheet / backend integration kar sakte ho
+            this.reset();
+        });
+    </script>
+
+</body>
+
+</html>
